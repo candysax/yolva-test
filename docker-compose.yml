@@ -1,0 +1,36 @@
+services:
+  php:
+    build: ./
+    restart: on-failure
+    volumes:
+      - ./:/var/www/
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:stable-alpine
+    restart: on-failure
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    restart: on-failure
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=yolva
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - db_data_yolva:/var/lib/mysql
+      - ./migration.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data_yolva:

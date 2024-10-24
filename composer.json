@@ -1,0 +1,13 @@
+{
+    "name": "yolva/test",
+    "autoload": {
+        "psr-4": {
+            "Yolva\\Test\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniil Ishin"
+        }
+    ]
+}
