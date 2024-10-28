@@ -67,7 +67,7 @@ class RegisterFormController {
         notificationEl.innerText = successMessage
         notificationEl.style.display = 'block'
 
-        setInterval(() => {
+        setTimeout(() => {
             notificationEl.style.display = 'none'
         }, 5000)
     }
