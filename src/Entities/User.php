@@ -6,5 +6,5 @@ use Yolva\Test\Base\Entity;
 
 class User extends Entity
 {
-    protected string $table = 'users';
+    protected static string $table = 'users';
 }

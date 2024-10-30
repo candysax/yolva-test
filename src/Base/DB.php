@@ -42,4 +42,9 @@ class DB
 
         return ($record !== false) ? $record : [];
     }
+
+    public function fetchAll(): array
+    {
+        return $this->statement->fetchAll();
+    }
 }
