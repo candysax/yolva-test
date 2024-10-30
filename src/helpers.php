@@ -11,15 +11,15 @@ function abort(int $code = 404): void
 
 function base_path(string $path): string
 {
-    return BASE_PATH.$path;
+    return BASE_PATH . $path;
 }
 
 function view_path(string $path): string
 {
-    return VIEW_PATH.$path;
+    return VIEW_PATH . $path;
 }
 
 function asset_path(string $path): string
 {
-    return '/assets/'.$path;
+    return '/assets/' . $path;
 }
