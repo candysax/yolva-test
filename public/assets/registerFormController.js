@@ -4,7 +4,7 @@ class RegisterFormController {
     }
 
     handle() {
-        this.form.addEventListener('submit',  (e) => {
+        this.form.addEventListener('submit', (e) => {
             e.preventDefault()
             this.#send()
         })
